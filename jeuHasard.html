@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasard</title>
+</head>
+<body>
+<script>
+
+    let rejouer = true;
+
+    while (rejouer) {
+        let r = Math.random() * 1000;
+        let random = Math.ceil(r);
+        let trouve = false;
+        let k = 1;
+        while (!trouve && k <= 20) {
+        let guess = parseInt (prompt("Essayez de deviner l'entier"," "));
+        k += 1;
+            if (guess > random) {
+                window.alert("Trop grand !");
+            } else if (guess < random) {
+                window.alert("Trop petit !");
+            } else if (guess === random) {
+                window.alert("GGWP, en " + k + " essais !");
+                trouve = true;
+            }
+        }
+        if (!trouve) {
+            window.alert("Dommage, pas trouvé. Le nombre était " + random);
+        }
+        let rep = prompt("Voulez-vous rejouer ?","Oui / Non");
+        if (rep == "Non") {
+            rejouer = false;
+            document.write("Merci d'avoir joué !!!!!!!");
+        }
+    }
+
+</script>
+</body>
+</html>
